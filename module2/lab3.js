@@ -108,10 +108,10 @@ class ExtendedUser extends User {
               teacherCourse.courseName === courseName &&
               teacherCourse.level === course.level
             ) {
-              matchingCourses.push({
+              return {
                 course: course.courseName,
                 level: course.level,
-              });
+              };
             }
           }
         }
