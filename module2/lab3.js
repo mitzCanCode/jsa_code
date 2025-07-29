@@ -83,8 +83,8 @@ class ExtendedUser extends User {
   }
 
   static match(teacher, student, courseName = null) {
-    let matchingCourses = [];
     if (!courseName) {
+      let matchingCourses = [];
       for (let course of teacher.courses) {
         for (let studentCourse of student.courses) {
           if (
@@ -98,6 +98,7 @@ class ExtendedUser extends User {
           }
         }
       }
+      return matchingCourses.length > 0 ? matchingCourses : undefined;
     } else {
       let found = false;
       for (let course of student.courses) {
@@ -120,7 +121,6 @@ class ExtendedUser extends User {
         console.log(`Student does not have the course ${courseName}`);
       }
     }
-    return matchingCourses.length > 0 ? matchingCourses : undefined;
   }
 }
 
