@@ -75,6 +75,17 @@ class Figure {
     this.elements.points = [];
     this.elements.lines = [];
   }
+
+  removeDuplicates() {
+    if (this.elements.lines) {
+      let tempLines = new Set(this.elements.lines);
+      this.elements.lines = Array.from(tempLines.values());
+    }
+    if (this.elements.points) {
+      let tempPoints = new Set(this.elements.points);
+      this.elements.points = Array.from(tempPoints.values());
+    }
+  }
 }
 
 let f = new Figure();
